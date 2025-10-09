@@ -20,6 +20,14 @@
   color: #ff5733; /* Puedes cambiar este color */
 }
 
+/* Ajusta el tamaño de las imágenes de clientes */
+#clientsCarousel .pic img {
+  max-width: 200px;   /* ancho máximo */
+  max-height: 150px;  /* alto máximo */
+  object-fit: contain; /* evita que se deformen */
+  margin: auto;       /* centra la imagen */
+}
+
 /*tootltp*/
 
 .tooltip-inner {
