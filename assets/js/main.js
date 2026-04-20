@@ -182,4 +182,18 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  /**
+   * Clientes Carousel Auto-play Fix
+   */
+  window.addEventListener('load', () => {
+    const clientsCarousel = document.querySelector('#clientsCarousel');
+    if (clientsCarousel) {
+      new bootstrap.Carousel(clientsCarousel, {
+        interval: 3000, // Se mueve cada 3 segundos
+        ride: 'carousel',
+        pause: 'hover' // Se detiene si el mouse está encima
+      });
+    }
+  });
+
 })();
