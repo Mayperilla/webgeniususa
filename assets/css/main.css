@@ -20,14 +20,55 @@
   color: #ff5733; /* Puedes cambiar este color */
 }
 
-/* Ajusta el tamaño de las imágenes de clientes */
+/* --- FIX CARRUSEL CLIENTES 3 ITEMS --- */
+
+/* 1. Forzamos al contenedor a mostrar los hijos en línea */
+#clientsCarousel .carousel-inner {
+    display: flex !important;
+    align-items: flex-start; /* Alinea los logos arriba */
+}
+
+/* 2. Ajustamos cada item para que ocupe el 33% */
+#clientsCarousel .carousel-item {
+    display: block !important;
+    margin-right: 0 !important;
+    flex: 0 0 33.3333%;
+    padding: 15px;
+    transition: transform 0.5s ease;
+}
+
+/* 3. Ajuste de las imágenes (reemplaza tu código anterior) */
 #clientsCarousel .pic img {
-  width: 100%;         /* Que use el ancho del 33% del item */
-  max-width: 180px;    /* Un poco más pequeño para que no choquen entre sí */
-  height: 120px;       /* Forzamos un alto uniforme */
-  object-fit: contain; /* Mantiene la proporción sin estirar */
-  display: block;
-  margin: 0 auto;      /* Centrado horizontal */
+    width: 100%;
+    max-width: 160px;    /* Un poco más pequeño para que respiren */
+    height: 100px;       /* Altura fija para que todos se vean alineados */
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+/* 4. FIX PARA USA: Evita que el texto flote y tape la imagen */
+#clientsCarousel .member-info {
+    position: relative !important; /* Quita el absolute que causa el error en USA */
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    padding: 10px 5px !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    text-align: center;
+}
+
+#clientsCarousel .member-info h4 {
+    font-size: 14px !important;
+    margin-bottom: 5px !important;
+}
+
+/* 5. Ajuste para Celulares (vuelve a 1 solo item) */
+@media (max-width: 768px) {
+    #clientsCarousel .carousel-item {
+        flex: 0 0 100%;
+    }
 }
 
 /*tootltp*/
