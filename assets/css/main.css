@@ -81,6 +81,13 @@
     float: none !important;
 }
 
+/* Esto ayuda a que la animación de deslizamiento funcione con el display: flex */
+#clientsCarousel .carousel-item-next,
+#clientsCarousel .carousel-item-prev,
+#clientsCarousel .carousel-item.active {
+    display: flex !important;
+}
+
 /*tootltp*/
 
 .tooltip-inner {
