@@ -71,6 +71,16 @@
     }
 }
 
+/* Suaviza la transición cuando se mueven los 3 ítems */
+#clientsCarousel .carousel-inner {
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Evita que los items que no están activos desaparezcan bruscamente */
+#clientsCarousel .carousel-item {
+    float: none !important;
+}
+
 /*tootltp*/
 
 .tooltip-inner {
