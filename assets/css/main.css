@@ -20,72 +20,47 @@
   color: #ff5733; /* Puedes cambiar este color */
 }
 
-/* --- FIX CARRUSEL CLIENTES 3 ITEMS --- */
+/* --- FIX FINAL CARRUSEL CLIENTES --- */
 
-/* 1. Forzamos al contenedor a mostrar los hijos en línea */
 #clientsCarousel .carousel-inner {
     display: flex !important;
-    align-items: flex-start; /* Alinea los logos arriba */
+    /* Esto permite que los items se muevan lateralmente en lugar de encimarse */
+    transition: transform 0.5s ease-in-out; 
 }
 
-/* 2. Ajustamos cada item para que ocupe el 33% */
 #clientsCarousel .carousel-item {
-    display: block !important;
-    margin-right: 0 !important;
-    flex: 0 0 33.3333%;
-    padding: 15px;
-    transition: transform 0.5s ease;
+    /* Quitamos el display: block que pusimos antes */
+    display: block !important; 
+    flex: 0 0 33.333333%; /* Tres items visibles */
+    margin-right: 0;
+    transition: margin 0.5s ease;
 }
 
-/* 3. Ajuste de las imágenes (reemplaza tu código anterior) */
-#clientsCarousel .pic img {
+/* Fix para la animación: Cuando Bootstrap mueve el carrusel, 
+   evitamos que oculte los otros 2 items visibles */
+#clientsCarousel .carousel-item.active,
+#clientsCarousel .carousel-item-next,
+#clientsCarousel .carousel-item-prev {
+    display: block !important;
+}
+
+/* Centrado de logos */
+#clientsCarousel .member {
     width: 100%;
-    max-width: 160px;    /* Un poco más pequeño para que respiren */
-    height: 100px;       /* Altura fija para que todos se vean alineados */
+    padding: 20px;
+}
+
+#clientsCarousel .pic img {
+    height: 100px;
     object-fit: contain;
-    display: block;
     margin: 0 auto;
 }
 
-/* 4. FIX PARA USA: Evita que el texto flote y tape la imagen */
-#clientsCarousel .member-info {
-    position: relative !important; /* Quita el absolute que causa el error en USA */
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    padding: 10px 5px !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    text-align: center;
-}
-
-#clientsCarousel .member-info h4 {
-    font-size: 14px !important;
-    margin-bottom: 5px !important;
-}
-
-/* 5. Ajuste para Celulares (vuelve a 1 solo item) */
+/* Responsivo: 1 solo item en móviles */
 @media (max-width: 768px) {
     #clientsCarousel .carousel-item {
         flex: 0 0 100%;
     }
-}
-
-/* Suaviza la transición cuando se mueven los 3 ítems */
-#clientsCarousel .carousel-inner {
-    transition: transform 0.6s ease-in-out;
-}
-
-/* Evita que los items que no están activos desaparezcan bruscamente */
-#clientsCarousel .carousel-item {
-    float: none !important;
-}
-
-/* Esto ayuda a que la animación de deslizamiento funcione con el display: flex */
-#clientsCarousel .carousel-item-next,
-#clientsCarousel .carousel-item-prev,
-#clientsCarousel .carousel-item.active {
-    display: flex !important;
 }
 
 /*tootltp*/
