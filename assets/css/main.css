@@ -20,39 +20,69 @@
   color: #ff5733; /* Puedes cambiar este color */
 }
 
-/* --- ESTILO LIMPIO CLIENTES (1 ITEM) --- */
+/* --- LIMPIEZA TOTAL: CARRUSEL DE CLIENTES --- */
+
 #clientsCarousel {
-    padding: 40px 0;
+  padding: 60px 0;
+  min-height: 400px; /* Evita que la página "salte" al cambiar de logo */
 }
 
-/* Centrado total del contenido */
+/* Forzamos que solo se vea uno (Reset de los intentos previos) */
+#clientsCarousel .carousel-inner {
+  display: block !important; 
+}
+
 #clientsCarousel .carousel-item {
-    text-align: center;
-    min-height: 250px;
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
 }
 
-/* Ajuste del logo para que no se vea gigante */
+/* Estilo del contenedor del logo */
+#clientsCarousel .pic {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px; /* Espacio uniforme para todos los logos */
+}
+
 #clientsCarousel .pic img {
-    max-width: 200px;
-    height: 150px;
-    object-fit: contain;
-    margin: 0 auto 20px auto;
-    display: block;
+  max-width: 220px;
+  max-height: 140px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%); /* Efecto profesional: logos en gris */
+  transition: 0.3s;
+  opacity: 0.7;
 }
 
-/* Estilo del texto debajo del logo */
+#clientsCarousel .carousel-item:hover img {
+  filter: grayscale(0%); /* Color al pasar el mouse */
+  opacity: 1;
+}
+
+/* Estilo del texto */
 #clientsCarousel .member-info h4 {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 5px;
-    color: #040677; /* Tu color de marca */
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #040677;
 }
 
 #clientsCarousel .member-info span {
-    font-style: italic;
-    color: #1acc8d; /* Tu color verde accent */
+  font-style: italic;
+  font-size: 15px;
+  color: #1acc8d;
 }
 
+/* Flechas de control: las hacemos visibles y elegantes */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 3rem;
+  height: 3rem;
+  background-color: rgba(0,0,0,0.1);
+  border-radius: 50%;
+}
 /*tootltp*/
 
 .tooltip-inner {
