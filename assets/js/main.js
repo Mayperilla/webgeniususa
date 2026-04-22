@@ -182,15 +182,17 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
-window.addEventListener('load', () => {
+/**
+   * Clientes Carousel Reset
+   */
+  window.addEventListener('load', () => {
     const clientsCarousel = document.querySelector('#clientsCarousel');
     if (clientsCarousel) {
-      // Forzamos el inicio manual
-      const carouselInstance = new bootstrap.Carousel(clientsCarousel, {
-        interval: 2500,
-        wrap: true
+      new bootstrap.Carousel(clientsCarousel, {
+        interval: 3500, // Un poco más lento para que la gente pueda leer
+        ride: 'carousel',
+        pause: 'hover'
       });
-      carouselInstance.cycle(); // Esto arranca el motor de movimiento
     }
   });
 
