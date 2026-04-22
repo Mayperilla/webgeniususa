@@ -20,47 +20,37 @@
   color: #ff5733; /* Puedes cambiar este color */
 }
 
-/* --- FIX FINAL CARRUSEL CLIENTES --- */
-
-#clientsCarousel .carousel-inner {
-    display: flex !important;
-    /* Esto permite que los items se muevan lateralmente en lugar de encimarse */
-    transition: transform 0.5s ease-in-out; 
+/* --- ESTILO LIMPIO CLIENTES (1 ITEM) --- */
+#clientsCarousel {
+    padding: 40px 0;
 }
 
+/* Centrado total del contenido */
 #clientsCarousel .carousel-item {
-    /* Quitamos el display: block que pusimos antes */
-    display: block !important; 
-    flex: 0 0 33.333333%; /* Tres items visibles */
-    margin-right: 0;
-    transition: margin 0.5s ease;
+    text-align: center;
+    min-height: 250px;
 }
 
-/* Fix para la animación: Cuando Bootstrap mueve el carrusel, 
-   evitamos que oculte los otros 2 items visibles */
-#clientsCarousel .carousel-item.active,
-#clientsCarousel .carousel-item-next,
-#clientsCarousel .carousel-item-prev {
-    display: block !important;
-}
-
-/* Centrado de logos */
-#clientsCarousel .member {
-    width: 100%;
-    padding: 20px;
-}
-
+/* Ajuste del logo para que no se vea gigante */
 #clientsCarousel .pic img {
-    height: 100px;
+    max-width: 200px;
+    height: 150px;
     object-fit: contain;
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
+    display: block;
 }
 
-/* Responsivo: 1 solo item en móviles */
-@media (max-width: 768px) {
-    #clientsCarousel .carousel-item {
-        flex: 0 0 100%;
-    }
+/* Estilo del texto debajo del logo */
+#clientsCarousel .member-info h4 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #040677; /* Tu color de marca */
+}
+
+#clientsCarousel .member-info span {
+    font-style: italic;
+    color: #1acc8d; /* Tu color verde accent */
 }
 
 /*tootltp*/
